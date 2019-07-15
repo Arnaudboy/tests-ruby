@@ -4,15 +4,19 @@ def translate(str)
     if word.start_with?(/[aeiou]/)
       str_arr[str_arr.index(word)] = word + "ay"
     else
-      counter = 0
-      suffix = []
+      suffix = ""
       word.each_char do |letter|
         if letter.start_with?(/[aeiou]/)
           break
-        elsif 
-          suffix = str.index(letter, /[^aeiou]+/) 
+        elsif letter.start_with?(/[q]/)
+          suffix = suffix + "qu"
+          prefix = word.slice!(/[^aeio]+/)
+          break
+        else
+          prefix = word.slice!(/[^aeiou]/)
+          suffix = suffix + letter
         end
-      end
+      end      
       str_arr[str_arr.index(word)] = word + suffix + "ay"
     end
   end
