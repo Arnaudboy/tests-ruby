@@ -1,4 +1,6 @@
 require_relative '../lib/00_hello'
+require './spec_helper'
+require 'yaml'
 
 describe "the hello function" do
   it "says hello" do
