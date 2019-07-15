@@ -7,7 +7,7 @@ def shout (string)
 end
 
 def repeat (truc, n = 2, *p)
-    if p != nil 
+    if p = 0
         return (truc + " ")*(n - 1) + truc 
     else 
         return (truc + " ")*(p - 1) + truc
